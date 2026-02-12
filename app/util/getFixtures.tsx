@@ -33,12 +33,12 @@ const leagues = [
 
 async function fetchFixturesByLeague(year: number, league: number): Promise<Fixture[]> {
 
-    const url = `https://api-football-v1.p.rapidapi.com/v3/fixtures?league=${league}&season=${year}`;
+    const url = `https://v3.football.api-sports.io/v3/fixtures?league=${league}&season=${year}`;
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': API_KEY,
-            'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+            'x-apisports-Key': API_KEY,
+            'x-apisports-Host': 'v3.football.api-sports.io'
         },
         next: {
             // revalidate data every 24 hours
