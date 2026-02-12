@@ -26,8 +26,8 @@ export default async function getStandings(): Promise<Standing[]> {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': API_KEY,
-            'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+            'x-apisports-Key': API_KEY,
+            'x-apisports-Host': 'v3.football.api-sports.io'
         },
         next: {
             revalidate: 60 * 60 * 24
@@ -45,7 +45,7 @@ export default async function getStandings(): Promise<Standing[]> {
     ]
 
     for (const league of leagues) {
-        let url = `https://api-football-v1.p.rapidapi.com/v3/standings?season=${year}&league=${league.id}`
+        let url = `https://v3.football.api-sports.io/v3/standings?season=${year}&league=${league.id}`
 
         try {
             const response = await fetch(url, options);
