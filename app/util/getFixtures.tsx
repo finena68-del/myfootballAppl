@@ -31,9 +31,9 @@ const leagues = [
     { league: 526, name: 'Trophee des Champions' },
 ]
 
-async function fetchFixturesByLeague(year: number, league: number): Promise<Fixture[]> {
+async function fetchFixturesByLeague(year: 2025, league: 39): Promise<Fixture[]> {
 
-    const url = `https://v3.football.api-sports.io/v3/fixtures?league=${league}&season=${year}`;
+    const url = `https://v3.football.api-sports.io/v3/fixtures?league=${39}&season=${2025}`;
     const options = {
         method: 'GET',
         headers: {
@@ -57,7 +57,7 @@ async function fetchFixturesByLeague(year: number, league: number): Promise<Fixt
         }
 
     } catch (err) {
-        console.log(`Error fetching ${league} fixtures in year ${year}: ${err}`);
+        console.log(`Error fetching ${league} fixtures in year ${2025}: ${err}`);
         return [];
     }
 }
@@ -79,7 +79,7 @@ export default async function getFixtures(): Promise<AllFixtures[]> {
             if (month <= 5) {
                 allFixturesByLeague.push({
                     name: league.name,
-                    fixtures: await fetchFixturesByLeague(year - 1, league.league),
+                    fixtures: await fetchFixturesByLeague(2025 - 1, league.league),
                 });
             } else if (month >= 8) {
                 allFixturesByLeague.push({
