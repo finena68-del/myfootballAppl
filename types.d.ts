@@ -54,7 +54,7 @@ type FixtureInfo = {
     date: string,
     timestamp: number,
     periods: {
-        fisrt: number,
+        first: number,
         second: number
     },
     venue: {
