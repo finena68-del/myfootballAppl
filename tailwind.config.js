@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+import tailwindScrollbar from 'tailwind-scrollbar'; // Import plugin di sini
+
+export default {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -15,6 +17,6 @@ module.exports = {
     },
   },
   plugins: [
-    require('tailwind-scrollbar')
+    tailwindScrollbar // Gunakan variabel import di sini
   ],
 }
